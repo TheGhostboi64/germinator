@@ -1,13 +1,28 @@
 <html>
 <head>
   <title>Germinator</title>
+<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
   </head>
   <body>
     <center>
-    <script type="text/javascript" src="swf2js.js"></script>
-<script type="text/javascript">
-    swf2js.load('germinator.swf');
+   <script>
+    window.RufflePlayer = window.RufflePlayer || {};
+window.RufflePlayer.config = {
+"autoplay": "auto",
+"allowScriptAccess": true,
+ "quality": "high",
+"upgradeToHttps": window.location.protocol === "https:",
+};
+    window.addEventListener("load", (event) => {
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        const container = document.getElementById("container");
+        container.appendChild(player);
+        player.load("germinator.swf");
+player.style.width = "558px"; player.style.height = "370px";
+    });
 </script>
+<script src="path/to/ruffle/ruffle.js"></script>
     </center>
   </body>
 </html>
