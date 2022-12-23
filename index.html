@@ -5,7 +5,7 @@
   </head>
   <body>
     <center>
-   <script type="text/javascript">
+   <script>
     window.RufflePlayer = window.RufflePlayer || {};
 window.RufflePlayer.config = {
 "autoplay": "auto",
@@ -13,13 +13,16 @@ window.RufflePlayer.config = {
  "quality": "high",
 "upgradeToHttps": window.location.protocol === "https:",
 };
+</script>
+<script>
     window.addEventListener("load", (event) => {
         const ruffle = window.RufflePlayer.newest();
         const player = ruffle.createPlayer();
         const container = document.getElementById("container");
         container.appendChild(player);
         player.load("germinator.swf");
-player.style.width = "558px"; player.style.height = "370px";
+player.style.width = "558px"; 
+player.style.height = "370px";
     });
 </script>
 </center>
